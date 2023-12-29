@@ -11,8 +11,7 @@ Explore and visualize COVID-19 data insights using Amazon Web Services (AWS) and
 ## Getting Started
     
 ## 1. Data Collection Details:
-I obtained the COVID-19 dataset from [Our World in Data](https://ourworldindata.org/covid-cases).
-Our World in Data is a scientific online publication that focuses on large global problems such as poverty, disease, hunger, climate change, war, existential risks, and inequality.
+Obtained the COVID-19 dataset from [Our World in Data](https://ourworldindata.org/covid-cases), a scientific online publication addressing global challenges like poverty, disease, hunger, climate change, war, existential risks, and inequality.
 
 ## 2. Creating Table on Amazon RDS (MySQL):
 1. Log into EC2 instance on Amazon Linux and install MySQL
