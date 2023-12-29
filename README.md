@@ -1,6 +1,4 @@
-![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/f27f1ad8-43b5-4249-b511-b0b4bc1fff4e)![image](https://github.com/aidannguyen23/AWS-Covid-Analysis/assets/34725584/969f6252-c3b5-4c0f-b408-6f650b73f070)
-
-# COVID AWS QuickSight Dashboard
+# AWS COVID Analysis Project 
 
 ## Project Description
 Explore and visualize COVID-19 data insights using Amazon Web Services (AWS) and QuickSight. This repository contains a data analytics dashboard leveraging AWS services to analyze and visualize key trends related to COVID-19.
@@ -142,16 +140,18 @@ CREATE TABLE covid_cases (
 3. **Copy Files from S3 to EC2**
    - Execute `aws s3 <S3_Object_URI> <Local_File_Path>` to copy files from S3 bucket to the EC2 instance.
 
-### Transfer the S3 files to RDS
+## 5. Transfer the S3 files to RDS
 
 - **Load the COVID-19 population data into the `covid_cases` table:**
-
+  
+In my case,
 ```sql
 mysqlimport --host=database-1.****.us-west-1.rds.amazonaws.com --user=aidan --password=**** --local --fields-terminated-by=',' --fields-enclosed-by='"' covid_data covid_cases s3://covidpopulationdata/covid_population.csv
 ```
 
 ## 6. Creating a Dashboard:
 I utilized Amazon QuickSight to create a dashboard that displays key metrics and visualizations revolving around cases and deaths of COVID-19 as of December 2023 derived from my MySQL dataset.
+
 ![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/8bda7fca-343c-4f5c-8bd1-f3330f743140)
 
 
