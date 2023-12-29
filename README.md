@@ -1,4 +1,4 @@
-![image](https://github.com/aidannguyen23/AWS-Covid-Analysis/assets/34725584/969f6252-c3b5-4c0f-b408-6f650b73f070)
+![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/f27f1ad8-43b5-4249-b511-b0b4bc1fff4e)![image](https://github.com/aidannguyen23/AWS-Covid-Analysis/assets/34725584/969f6252-c3b5-4c0f-b408-6f650b73f070)
 
 # COVID AWS QuickSight Dashboard
 
@@ -23,7 +23,7 @@ Our World in Data is a scientific online publication that focuses on large globa
 4. Create a table named `covid_cases` to store the dataset. 
 
 ```sql
-CREATE TABLE covid_data (
+CREATE TABLE covid_cases (
     iso_code VARCHAR(10),
     continent VARCHAR(50),
     location VARCHAR(100),
@@ -64,7 +64,7 @@ CREATE TABLE covid_data (
     total_boosters INT...
 );
 ```
-### 3.5 Connecting RDS to MySQL Workbench
+## 2.5 Connecting RDS to MySQL Workbench (Alternative)
 
  **Step 1: Launch MySQL Workbench**
 
@@ -101,6 +101,27 @@ CREATE TABLE covid_data (
 
 ## 3. Upload files to S3 
 
+### Uploading COVID-19 Population Data to S3
+
+1. **Access Amazon S3 Console**
+   - Log in to your AWS account and navigate to the Amazon S3 service.
+
+2. **Create a Bucket (if not already created)**
+   - Click on 'Create bucket'.
+   - Name your bucket and select the region (mine was us-west-1).
+   - Click 'Create'.
+
+3. **Upload File**
+   - Inside the bucket, click 'Upload'.
+   - Select the 'covid_population.csv' file from your local directory.
+   - Click 'Upload'.
+
+5. **Confirmation**
+   - Once uploaded, the file 'covid_population.csv' is now available in your specified S3 bucket.
+     
+![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/6151d92d-acb3-411b-bc16-9870d935da4f)
+
+
 ## 4. Transfer Files Between AWS S3 and AWS EC2
 
 #### Granting Permissions to EC2 Instance
@@ -121,18 +142,17 @@ CREATE TABLE covid_data (
 3. **Copy Files from S3 to EC2**
    - Execute `aws s3 <S3_Object_URI> <Local_File_Path>` to copy files from S3 bucket to the EC2 instance.
 
-Load the COVID-19 population data into the `covid_cases` table:
+### Transfer the S3 files to RDS
+
+- **Load the COVID-19 population data into the `covid_cases` table:**
 
 ```sql
-LOAD DATA LOCAL INFILE '/home/ec2-user/Downloads/covid_population.csv'
-INTO TABLE covid_data.covid_cases
-FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+mysqlimport --host=database-1.****.us-west-1.rds.amazonaws.com --user=aidan --password=**** --local --fields-terminated-by=',' --fields-enclosed-by='"' covid_data covid_cases s3://covidpopulationdata/covid_population.csv
 ```
 
-## 5. Creating a Dashboard:
-Use Amazon QuickSight, an AWS data visualization tool, to create a dashboard that displays key metrics or visualizations derived from your MySQL dataset.
-Include relevant charts, graphs, and tables to present insights from the data. Aim for clarity and simplicity in the dashboard design.
+## 6. Creating a Dashboard:
+I utilized Amazon QuickSight to create a dashboard that displays key metrics and visualizations revolving around cases and deaths of COVID-19 as of December 2023 derived from my MySQL dataset.
+![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/8bda7fca-343c-4f5c-8bd1-f3330f743140)
 
 
 
