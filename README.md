@@ -1,4 +1,4 @@
-# AWS COVID Analysis Project 
+# 🌐 AWS COVID Analysis Project 
 
 ## Project Description
 Explore and visualize COVID-19 data insights using Amazon Web Services (AWS) and QuickSight. This repository contains a data analytics dashboard leveraging AWS services to analyze and visualize key trends related to COVID-19.
@@ -121,7 +121,7 @@ CREATE TABLE covid_cases (
    - Click 'Upload'.
 
 5. **Confirmation**
-   - Once uploaded, the file 'covid_population.csv' is now available in your specified S3 bucket.
+   - Once uploaded, the file 'covid_population.csv' is now available in your specified S3 bucket.  📂
      
 ![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/6151d92d-acb3-411b-bc16-9870d935da4f)
 
@@ -133,7 +133,7 @@ CREATE TABLE covid_cases (
 1. **Attach AmazonS3ReadOnlyAccess Policy**
    - Click "Add permissions" > "Attach policies." to IAM role
    - Filter and attach "AmazonS3ReadOnlyAccess" policy.
-   - Note: Granting "AmazonS3ReadOnlyAccess" allows reading files from S3 to the EC2 instance. 
+   - Note: Granting "AmazonS3ReadOnlyAccess" allows reading files from S3 to the EC2 instance. 📥
 
 #### Copying Files from S3 to EC2
 
@@ -144,7 +144,7 @@ CREATE TABLE covid_cases (
    - Run `aws sts get-caller-identity` to verify the role and AWS CLI functionality.
   
 3. **Copy Files from S3 to EC2**
-   - Execute `aws s3 <S3_Object_URI> <Local_File_Path>` to copy files from S3 bucket to the EC2 instance.
+   - Execute `aws s3 <S3_Object_URI> <Local_File_Path>` to copy files from S3 bucket to the EC2 instance. 🔄
 
 ## 5. Transfer the S3 files to RDS
 
@@ -156,6 +156,6 @@ mysqlimport --host=database-1.****.us-west-1.rds.amazonaws.com --user=aidan --pa
 ```
 
 ## 6. Creating a Dashboard:
-I utilized Amazon QuickSight to create a dashboard that displays key metrics and visualizations revolving around cases and deaths of COVID-19 as of December 2023 derived from my MySQL dataset.
+I utilized Amazon QuickSight to create a dashboard that displays key metrics and visualizations revolving around cases and deaths of COVID-19 as of December 2023 derived from my MySQL dataset. 📊
 
 ![image](https://github.com/aidannguyen23/AWS-COVID-Analysis/assets/34725584/8bda7fca-343c-4f5c-8bd1-f3330f743140)
