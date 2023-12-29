@@ -7,6 +7,13 @@ Explore and visualize COVID-19 data insights using Amazon Web Services (AWS) and
 - Interactive visualizations showcasing pandemic metrics.
 - Utilization of AWS services: RDS, S3, EC2, and QuickSight.
 - Data storage, processing, and dashboard creation.
+  
+## Objectives
+Familiarization with Data Storage: This project aimed to provide a hands-on learning experience in managing data storage using AWS services like Amazon RDS (Relational Database Service) and S3 (Simple Storage Service). It involved understanding how to create databases, store datasets, and manage data within the AWS ecosystem.
+
+Understanding Data Processing: The project sought to gain knowledge about processing data effectively using tools such as MySQL and AWS services like EC2 (Elastic Compute Cloud). It involved tasks like data importation, data transformation, and running MySQL queries to process and manage the COVID-19 dataset.
+
+Exploration of Cloud Computing: The primary objective was to gain familiarity with cloud computing principles, particularly within the AWS environment. It involved understanding how to leverage cloud-based resources (such as instances, storage, and services) to perform data-related tasks, including analysis and visualization.
 
 ## Getting Started
     
