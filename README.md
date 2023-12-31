@@ -1,5 +1,7 @@
 # 🌐 AWS COVID Analysis Project 
 
+![image](https://github.com/aidannguyen23/AWS-Covid-Analysis/assets/34725584/969f6252-c3b5-4c0f-b408-6f650b73f070)
+
 ## Project Description
 Explore and visualize COVID-19 data insights using Amazon Web Services (AWS) and QuickSight. This repository contains a data analytics dashboard leveraging AWS services to analyze and visualize key trends related to COVID-19.
 
